@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!-- saved from url=(0095)file:///C:/Users/deven/AppData/Local/Temp/%7B7F6250E8-8F98-4B03-94DE-668DA1C07A5E%7D/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>IMDB/Admin</title>
+    <style>
+        table, th, td {
+          border: 1px solid whitesmoke;
+        }
+        .box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        }
+        .insert {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+    </style>
+
+</head>
+<body bgcolor="#000000">
+
+<div class="home-container">
+    <div class="about-us">
+        <h3 style="color:white">IMDB</h3>
+        <p style="color:white">
+            This is our final semester project. 
+            <br>
+            Which consist of several movies where admin can do crud operaions and we have to check its security by breaching it.
+            <br>
+            Then securing it again by providing a solution so it should not happen again Additionally 
+            <br>
+            The site had 83 million registered users.
+        </p>
+    </div>
+    <div>
+        <h3 style="color:white">MOVIE LIST</h3>
+
+        <p style="color:white">You can add movies from <a href="/showForm"><i>here</i></a>.</p>
+        <table class="table" style="width:100%">
+            <thead>
+                <tr>
+                    <th scope="col" style="color:white">Movie Name</th>
+                    <th scope="col" style="color:white">Movie Description</th>
+                    <th scope="col" style="color:white">Movie Rating</th>
+                    <th scope="col" style="color:white">Movie Prize</th>
+                    <th scope="col" style="color:white">Update</th>
+                    <th scope="col" style="color:white">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="i : ${movies}">
+                    <td th:text="${i.MOVIE_NAME}" style="color:white"></td>
+                    <td th:text="${i.MOVIE_DESCRIPTION}" style="color:white"></td>
+                    <td th:text="${i.MOVIE_RATING}" style="color:white"></td>
+                    <td th:text="${i.MOVIE_COST}" style="color:white"></td>
+                    <td><a th:href="@{/edit/{id}(id=${i.MOVIE_ID})}" style="color:white"><button type="button">Update</button></a></td>
+                    <td><a th:href="@{/delete/{id}(id=${i.MOVIE_ID})}" style="color:white"><button type="button">Delete</button></a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div style="position: relative; height: 400px;">    
+
+    <div style="position: absolute; bottom: 5px;">
+        <ul>
+            <li><a href="file:///C:/Users/deven/AppData/Local/Temp/%7B7F6250E8-8F98-4B03-94DE-668DA1C07A5E%7D/index.html#" target="_blank">Contact us</a></li>
+            <li><a href="file:///C:/Users/deven/AppData/Local/Temp/%7B7F6250E8-8F98-4B03-94DE-668DA1C07A5E%7D/index.html#" target="_blank">About us</a></li>
+        </ul>
+        <div class="copyright" style="color:white">© Copyright Prabhjot | Anjan | Savita | Geeta</div>
+    </div>
+</div>
+
+
+
+</body></html>

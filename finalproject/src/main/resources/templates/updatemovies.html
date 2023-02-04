@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body bgcolor="#000000">
+    <div>
+        <h3 style="color:white"> Update Movies</h3>
+        <div>
+            <div>
+                <div>
+                    <form action="#" th:action="@{/update/{id}(id=${movies?.MOVIE_ID})}" th:object="${movies}" method="post">
+                            <div>
+                                <label for="name" style="color:white">Movie Name</label> <input type="text" th:field="*{MOVIE_NAME}" placeholder="Movie Name"> 
+                            </div>
+                            <div>
+                                <label for="description" style="color:white">Movie Description</label> <input type="text" th:field="*{MOVIE_DESCRIPTION}" placeholder="Movie Description"> 
+                            </div>
+
+                            <div>
+                                <label for="rating" style="color:white">MOVIE RATING</label> <input type="text" th:field="*{MOVIE_RATING}" placeholder="Movie Ratings."> 
+                            </div>
+
+                            <div>
+                                <label for="Prise" style="color:white">MOVIE COST</label> <input type="text" th:field="*{MOVIE_COST}" placeholder="Movie Cost"> 
+                            </div>
+
+                            <div>
+                                <input type="submit" value="Update Movie">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
